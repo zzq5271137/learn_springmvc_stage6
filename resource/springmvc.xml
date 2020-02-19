@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
+
+    <context:component-scan base-package="com.mycomp.springmvc"/>
+
+    <!--
+        解决静态资源无法访问的问题, 方式一;
+        作用: 检查访问请求是否是静态资源, 如果是, 直接放行
+    -->
+    <mvc:default-servlet-handler/>
+
+    <!--
+        解决静态资源无法访问的问题, 方式二;
+        作用: 直接指定哪个目录下的内容是资源文件, 是允许访问的
+    -->
+    <!-- <mvc:resources location="/images" mapping="/images/**"/> -->
+    <!-- <mvc:resources location="/css" mapping="/css/**"/> -->
+    <!-- <mvc:resources location="/js" mapping="/js/**"/> -->
+
+    <!-- 同样, 由于配置了"mvc:...", 需要配置annotation-driven -->
+    <mvc:annotation-driven/>
+
+    <!-- 配置视图解析器 -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/view/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <!-- 上传文件的配置 -->
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="UTF-8"/>
+        <property name="maxUploadSize" value="102400"/>
+    </bean>
+
+    <!-- 国际化的配置 -->
+    <bean id="messageSource"
+          class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename" value="language"/>
+    </bean>
+
+</beans>
