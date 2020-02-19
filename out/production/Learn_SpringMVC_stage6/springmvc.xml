@@ -55,4 +55,31 @@
         <property name="basename" value="language"/>
     </bean>
 
+    <!-- 点击进行中英文切换的配置 -->
+    <!-- 配置session本地解析器 -->
+    <bean id="localeResolver"
+          class="org.springframework.web.servlet.i18n.SessionLocaleResolver"/>
+    <!-- 配置拦截器 -->
+    <mvc:interceptors>
+        <!-- 国际化的拦截器 -->
+        <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+            <property name="paramName" value="language"/>
+        </bean>
+
+        <!-- 自定义的拦截器, 拦截所有控制器方法 -->
+        <!-- <bean class="com.mycomp.springmvc.web.interceptor.MyFirstInterceptor"/> -->
+
+        <!-- 自定义的拦截器, 拦截指定控制器方法-->
+        <mvc:interceptor>
+            <!-- 拦截指定请求, path为url路径 -->
+            <mvc:mapping path="/local"/>
+            <!-- 排除: 除了指定的请求不拦截, 其他的都拦截 -->
+            <!-- <mvc:exclude-mapping path="/local"/> -->
+            <bean class="com.mycomp.springmvc.web.interceptor.MyFirstInterceptor"/>
+        </mvc:interceptor>
+
+        <bean class="com.mycomp.springmvc.web.interceptor.MySecondInterceptor"/>
+
+    </mvc:interceptors>
+
 </beans>

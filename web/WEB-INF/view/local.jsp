@@ -14,8 +14,13 @@
 <body>
 <h1>本地化/国际化, 结果页</h1>
 
-<fmt:message key="welcome"/>
-<fmt:message key="name"/>
+<a href="?language=zh_CN"><fmt:message key="language.cn"/></a>
+<a href="?language=en_US"><fmt:message key="language.en"/></a>
+
+<hr>
+
+<fmt:message key="welcome"/><br>
+<fmt:message key="name"/><br>
 
 </body>
 </html>
