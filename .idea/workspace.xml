@@ -6,7 +6,12 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c2ab6aba-08ac-4e2b-9631-a8fe303b14c8" name="Default Changelist" comment="" />
+    <list default="true" id="c2ab6aba-08ac-4e2b-9631-a8fe303b14c8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/课件/springMVC.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/课件/springMVC.xmind" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/课件/springMVC2.xmind" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/课件/springMVC3.xmind" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -298,11 +303,6 @@
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
             </expand>
             <select />
           </treeState>
@@ -335,6 +335,9 @@
       <workItem from="1582106485224" duration="3000" />
       <workItem from="1582106574664" duration="1724000" />
       <workItem from="1582108312107" duration="2316000" />
+      <workItem from="1582814646213" duration="1000" />
+      <workItem from="1582814690343" duration="1000" />
+      <workItem from="1582814733482" duration="1000" />
     </task>
     <servers />
   </component>
